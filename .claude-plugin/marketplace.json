@@ -1,0 +1,18 @@
+{
+  "name": "dosportres",
+  "description": "Marketplace de dosportres: conexión de asistentes de IA al ERP",
+  "owner": {
+    "name": "Speedy Internet"
+  },
+  "plugins": [
+    {
+      "name": "dosportres",
+      "description": "Consulta y borradores en el ERP dosportres con los permisos de tu rol",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "Speedy Internet"
+      }
+    }
+  ]
+}

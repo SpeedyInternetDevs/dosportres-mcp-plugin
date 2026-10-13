@@ -1,0 +1,14 @@
+{
+  "name": "dosportres",
+  "version": "1.0.0",
+  "description": "Conecta tu asistente de IA al ERP dosportres (iDempiere) con tu usuario.",
+  "author": {
+    "name": "Speedy Internet"
+  },
+  "mcpServers": {
+    "dosportres": {
+      "url": "https://dosportres.com.ec/mcp/v1"
+    }
+  },
+  "skills": "./skills/"
+}
