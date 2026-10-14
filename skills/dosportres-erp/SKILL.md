@@ -37,7 +37,12 @@ y clave de iDempiere, elige empresa y rol, y pulsa **Permitir acceso**. La IA nu
    (el país por defecto es el de la empresa). `describe_window` lo indica con `accepts_address`.
 5. Si `create_record` responde **"NO SE CREÓ NADA"**: muestre a la persona el resumen de valores por defecto, pregunte qué quiere cambiar y **espere la respuesta**. Pida las opciones solo de esos campos con `options_for` (no crea nada) y repita con lo elegido en `values` y lo aceptado en `confirmed_defaults`. Nunca complete `confirmed_defaults` sin ella.
 6. Para corregir un borrador, use `update_record` con `record` (identificador: número de documento, código o nombre) y `values` con los campos a modificar. Para líneas secundarias, use además `parent` con el identificador del padre.
-7. Si una herramienta devuelve **varias coincidencias**, muéstrelas y pregunte.
+7. **Primero la cabecera, después los hijos.** Cree primero el registro de la cabecera (pestaña principal). Una vez
+   creado, y antes de crear registros en sus pestañas hijas (contactos, direcciones, líneas…), consulte cada pestaña
+   con `find_records` y `parent`: el sistema o sus plugins pueden haberlos creado automáticamente. Si ya existe el
+   registro que la persona pidió, corríjalo con `update_record` en lugar de crear otro; cree uno nuevo solo si no
+   existe. Si hay registros automáticos que la persona no pidió, muéstreselos y pregunte qué hacer.
+8. Si una herramienta devuelve **varias coincidencias**, muéstrelas y pregunte.
 
 ## Nunca
 
