@@ -1,6 +1,6 @@
 {
   "name": "dosportres",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Conecta tu asistente de IA al ERP dosportres (iDempiere) con tu usuario: consulta datos y crea o corrige borradores según los permisos de tu rol.",
   "mcpServers": {
     "dosportres": {
