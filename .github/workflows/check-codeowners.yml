@@ -1,0 +1,21 @@
+name: Ensure CODEOWNERS is present
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-codeowners:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check for CODEOWNERS file
+        run: |
+          if [ ! -f ".github/CODEOWNERS" ]; then
+            echo "CODEOWNERS file missing!"
+            exit 1
+          else
+            echo "CODEOWNERS file is present."
+          fi
